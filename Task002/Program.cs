@@ -17,17 +17,17 @@ Console.WriteLine("Мы получили массив:\n");
 PrintArray(array);                                       // вывожу на печать полученный массив
 
 int minSumElements = 0;                                  // переменная "строка (номер) с минимальной суммой элементов"
-int sumInLine = SumOfElements(array, 0);                 // переменная "сумма элементов в строке"
+int sumInLine = SumOfElements(array, 0);                 // переменная "сумма элементов в строке" присваиваю ей значение суммы элементов 0 строки массива
 for (int i = 1; i < array.GetLength(0); i++)             // завожу цикл для построчного прохождения массива
 {
-  int tempSumLine = SumOfElements(array, i);             // переменная которой присваиваем значения для сравнения
-  if (sumInLine > tempSumLine)                           // цикл-в-цикле для выявления меньшей суммы в строке
+  int tempSumLine = SumOfElements(array, i);             // переменная которой присваиваем значения для сравнения (сумма элементов первой строки (для первой итерации))
+  if (sumInLine > tempSumLine)                           // оператор для выявления меньшей суммы в строке
   {
     sumInLine = tempSumLine;
     minSumElements = i;
   }
 }
-Console.WriteLine($"\nв котором {minSumElements + 1}я строкa является наименьшей по сумме всех её элементов, равных {sumInLine}\n");
+Console.WriteLine($"\nв котором {minSumElements + 1}я строкa является наименьшей по сумме всех её элементов, равных {sumInLine}\n");  // +1 т.к. minSumElements определяет строку по индексу (а индекс начинается с 0)
 
 int ReadNumberFromConsole(string message = "")          // метод для чтения из консоли введённого значения
 {
