@@ -35,12 +35,12 @@ void MatrixMultipl(int[,] firstMartrix, int[,] secomdMartrix, int[,] resultMatri
     for (int j = 0; j < resultMatrix.GetLength(1); j++)  // цикл пока j меньше длины столбцов первой матрицы
     {
       {
-        int multipl = 0;
-        for (int k = 0; k < firstMartrix.GetLength(1); k++)
+        int multipl = 0;                                 // переменная в которую складываем значения перемножения чисел матрицы
+        for (int k = 0; k < firstMartrix.GetLength(1); k++) // цикл для перемножения
         {
-          multipl += firstMartrix[i, k] * secondMartrix[k, j];
+          multipl += firstMartrix[i, k] * secondMartrix[k, j]; // переменная "k" одновременно выполняет роль столбцов (первой) и строк (второй) матрицы.
         }
-        resultMatrix[i, j] = multipl;
+        resultMatrix[i, j] = multipl;                   
       }
     }
   }
